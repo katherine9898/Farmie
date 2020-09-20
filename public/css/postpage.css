@@ -1,0 +1,69 @@
+#fruitOptions {
+    display: grid;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h3 {
+    border-bottom: 1px solid rgb(133, 190, 133);
+    color: rgb(163, 201, 108);
+}
+
+.postSelling {
+    margin: 0 auto;
+}
+
+#divPost {
+    text-align: center;
+}
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {
+    #fruitOptions {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .fruitImage {
+        width: 150px;
+    }
+}
+
+/* Big screen and tablet */
+@media (min-width: 400px) and (max-width: 1023px) {
+    section>label>img {
+        width: 15vw;
+    }
+
+    #fruitOptions {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fruitImage {
+        width: 90px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 400px) {
+    section>label>img {
+        width: 25vw;
+    }
+
+    #fruitOptions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #divPost {
+        text-align: center;
+    }
+
+    .fruitImage {
+        width: 80px;
+    }
+}

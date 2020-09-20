@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farmie | Log in</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon_io/favicon.ico" />
+
+    <!-- Bootstraps CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <!-- My own css file -->
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+
+<body>
+    <div id="forWholeForm">
+        <!---------------------------------------->
+        <!--      The logo and brand name       -->
+        <!---------------------------------------->
+
+        <div id="topLogo">
+            <img id="logo" src="/images/rabbitlogo.jpg">
+            <h2>Farmie</h2>
+        </div>
+
+        <!---------------------------------------->
+        <!--           The log in form          -->
+        <!---------------------------------------->
+        <div class="container" id="theForm">
+            <form id="theForm2" method="post" action="/login">
+                <div class="fillBox">
+                    <section class="forSec">
+                        <p id="lbEmail"><b>Email:</b></p>
+                        <input type="text" id="userEmail" placeholder="youremail@example.com" name="email">
+                    </section>
+                </div>
+
+                <div class="fillBox">
+                    <section class="forSec">
+                        <p id="lbPassword"><b>Password:</b></p>
+                        <input type="text" id="userPassword" placeholder="••••••••" name="password">
+                    </section>
+                </div>
+                <div id="logIn" class="my-2">
+                    <input type="submit" value="Log In" id="login" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        <div id="botPicture">
+            <img src="/images/fruit1.jpg" id="fruitPicture">
+        </div>
+    </div>
+
+    <!----------------------------------------------->
+    <!--    JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+        integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+        crossorigin="anonymous">
+    </script>
+
+    <!--------------------------------------------------------------------->
+    <!--       JS files: my own JavaScript functions included here       -->
+    <!--------------------------------------------------------------------->
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

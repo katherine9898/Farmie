@@ -1,0 +1,112 @@
+/* This will set style for search bar */
+#divSearch {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#searchIcon {
+    color: rgb(163, 201, 108);
+}
+
+#topBody {
+    border-bottom: 1px solid rgb(133, 190, 133);
+    color: rgb(163, 201, 108);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#plusIcon {
+    color: rgb(163, 201, 108);
+}
+
+/* For the post card */
+.postCard {
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.fruitImage {
+    text-align: center;
+}
+
+.titleFruit {
+    color: rgb(137, 167, 93);
+}
+
+/* User images */
+.userImages {
+    width: 50px;
+}
+
+/* For collapse content
+The code was found at https://www.w3schools.com/howto/howto_js_collapsible.asp
+*/
+.collapsible {
+    background-color: rgb(163, 201, 108);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+button.collapsible.active,
+.collapsible:hover {
+    background-color: rgb(145, 168, 113);
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+/* For small card */
+.smallCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#mapIcon {
+    color: rgb(163, 201, 108);
+}
+
+#backButton {
+    text-align: center;
+}
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {
+    .photoUploaded {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* Big screen and tablet */
+@media (min-width: 400px) and (max-width: 1023px) {
+    #searchBox {
+        border: 1px solid lightgray;
+    }
+
+    .photoUploaded {
+        width: 300px;
+        height: 280px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 400px) {
+    #searchBox {
+        border: 1px solid lightgray;
+    }
+
+    .photoUploaded {
+        width: 300px;
+        height: 200px;
+    }
+}

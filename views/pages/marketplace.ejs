@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farmie | <%=title%></title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon_io/favicon.ico" />
+
+    <!-- Bootstraps CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <!-- My own CSS file -->
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/marketplace.css">
+</head>
+
+<body>
+
+    <!----------------------------------------------->
+    <!--                Top navbar                 -->
+    <!----------------------------------------------->
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="/home" id="logoNav"><img id="logo" src="/images/rabbitlogo.jpg"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item active nav-active">
+                        <a class="nav-link" href="/marketplace">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/message">Message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mypage">Profile</a>
+                    </li>
+                    <% if(user){%>
+                    <li class="nav-item">
+                        <a class="nav-link nav-logout nav-logout2">Log out</a>
+                    </li>
+                    <%}%>
+                    </ul>
+                </div>
+                <% if(user){%>
+                    <a class="nav-link nav-logout nav-logout1">Log out</a>
+                    <%}%>
+        </nav>
+    </header>
+
+    <!-------------------------------------------->
+    <!--                Content                 -->
+    <!-------------------------------------------->
+    <div class="container marketPost">
+        <div id="topBody">
+            <h3>Marketplace</h3>
+            <h4><a href="/marketplace/post"><i class="fas fa-plus" id="plusIcon"></i></a></h4>
+        </div>
+
+        <form id="divSearch" method="post" action="/marketplace" class="my-2">
+            <input type="text" placeholder="Search by fruit name" name="search" id="searchBox">
+            <button type="submit" id="searchIcon"><i class="fas fa-search"></i></button>
+        </form>
+
+        <div>
+            <% posts.forEach((post)=>{ %>
+                    <div class="card postCard my-2">
+                        <div>
+                            <div class="fruitImage">
+                                <img src="/images/post/<%=post.photo%>" class="photoUploaded">
+                            </div>
+                            <div class="titleFruit">
+                                <% (post.products).forEach((fruit) =>{ %>
+                                <% if(post.products[post.products.length-1] == fruit){ %>
+                                <span><%= fruit %></span>
+                                <% } else{ %>
+                                <span><%= fruit %>, </span>
+                                <% }}); %>
+                            </div>
+
+                            <section class=" smallCard">
+                                <span>Quantity: <%= post.quantity %> kg</span>
+                                <span><i class="fas fa-map-marker-alt" id="mapIcon"></i> <%= post.userCountry %></span>
+                            </section>
+
+                            <div>
+                                <button type="button" class="collapsible">Details</button>
+                                <div class="content">
+                                    <p><%= post.description %></p>
+                                    <div>
+                                        <img src="/images/farmer2.svg" class="userImages" alt="<%= post.userId%>">
+                                        <span>
+                                            <%= post.userName %>
+                                        </span>
+                                        <span> posted at
+                                            <%= post.time.toLocaleString(undefined,{day: 'numeric', month: 'numeric', year:'numeric'}) %></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+
+            </div>
+
+            <!----------------------------------->
+            <!-- Icon navbar for small devices -->
+            <!----------------------------------->
+            <footer>
+                <nav class="nav navBottom">
+                    <a href="/home" class="nav_link">
+                        <i class="fas fa-home nav__icon"></i>
+                        <span class="nav__text">Home</span>
+                    </a>
+
+                    <a href="/marketplace" class="nav_link nav_link_active">
+                        <i class="fas fa-store nav__icon"></i>
+                        <span class="nav__text">Marketplace</span>
+                    </a>
+
+                    <a href="/message" class="nav_link">
+                        <i class="fas fa-comment-dots nav__icon"></i>
+                        <span class="nav__text">Message</span>
+                    </a>
+
+                    <a href="/mypage" class="nav_link">
+                        <i class="fas fa-user nav__icon"></i>
+                        <span class="nav__text">Profile</span>
+                    </a>
+                </nav>
+            </footer>
+
+            <!----------------------------------------------->
+            <!--    JS: Boostrap, Firebase, API related    -->
+            <!----------------------------------------------->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+                integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+                crossorigin="anonymous">
+            </script>
+            <!--------------------------------------------------------------------->
+            <!--       JS files: my own JavaScript functions included here       -->
+            <!--------------------------------------------------------------------->
+            <script src="/js/collapseDetails.js"></script>
+            <script src="/js/logout.js"></script>
+</body>
+
+</html>

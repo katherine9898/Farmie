@@ -1,0 +1,94 @@
+#logo {
+    width: 50px;
+}
+
+.nav-logout {
+    color: rgb(156, 192, 106);
+}
+
+.nav-logout2 {
+    display: none;
+}
+
+body {
+    padding-top: 90px;
+}
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {
+    .nav-active {
+        background-color: rgb(163, 201, 108);
+        border-radius: 20px;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+/* Big screen and tablet */
+@media (min-width: 400px) and (max-width: 1023px) {
+    footer {
+        display: none;
+    }
+
+    .nav-logout2 {
+        display: inline;
+    }
+
+    .nav-logout1 {
+        display: none;
+    }
+}
+
+/* Small devices */
+@media (max-width: 400px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    body {
+        margin: 0 0 55px 0;
+    }
+
+    .navBottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 55px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        background-color: #ffffff;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .nav_link {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 13px;
+        color: #444444;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.1s ease-in-out;
+    }
+
+    .nav_link:hover {
+        background-color: #eeeeee;
+        text-decoration: none;
+    }
+
+    .nav_link_active {
+        color: yellowgreen;
+    }
+
+    .nav__icon {
+        font-size: 18px;
+    }
+
+}

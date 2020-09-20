@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farmie</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/rabbitlogo.jpg"/>
+    
+   <!-- Bootstraps CDN -->
+    
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+   <link rel="stylesheet" href="../../public/userprofile.css">
+   <link rel="stylesheet" href="../../public/navbar.css">
+</head>
+<body>
+    <!-- Top navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#" id="logoNav"><img id="logo" src="./images/rabbitlogo.jpg"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Marketplace</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">User</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container">
+        <div class="userCard">
+            <section>
+                <img class="py-4" src="https://via.placeholder.com/130.png/000000/FFFFFF">
+                <p>UserName</p>
+            </section>
+            
+            <section class="userInfo">
+                <p><i class="fas fa-medal">{%RANK%}</i></p>
+                <p>Reliable: {%Reliable%}</p>
+                <p><i class="far fa-comments"></i></p>
+            </section>
+
+            <p>{%Location%}</p>
+        </div>
+
+        <div>
+            <div id="numberPost">
+                <p>{%TOTALPOST%} posts</p>
+            </div>
+            
+            <section class="userPosts">
+                <p>{%USERPOST%}</p>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <nav class="nav navBottom">
+            <a href="#" class="nav_link">
+                <i class="fas fa-home nav__icon"></i>
+                <span class="nav__text">Home</span>
+            </a>
+
+            <a href="#" class="nav_link">
+                <i class="fas fa-store nav__icon"></i>
+                <span class="nav__text">Marketplace</span>
+            </a>
+
+            <a href="#" class="nav_link">
+                <i class="fas fa-comment-dots nav__icon"></i>
+                <span class="nav__text">Message</span>
+            </a>
+
+            <a href="#" class="nav_link nav_link_active">
+                <i class="fas fa-user nav__icon"></i>
+                <span class="nav__text">Profile</span>
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>

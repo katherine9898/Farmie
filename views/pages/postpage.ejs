@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farmie</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon_io/favicon.ico" />
+
+    <!-- Bootstraps CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <!-- My own CSS file -->
+    <link rel="stylesheet" href="/css/postpage.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body>
+    <!----------------------------------------------->
+    <!--                Top navbar                 -->
+    <!----------------------------------------------->
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="/home" id="logoNav"><img id="logo" src="/images/rabbitlogo.jpg"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item active nav-active">
+                        <a class="nav-link" href="/marketplace">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/message">Message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mypage">Profile</a>
+                    </li>
+                    <% if(user){%>
+                    <li class="nav-item">
+                        <a class="nav-link nav-logout nav-logout2">Log out</a>
+                    </li>
+                    <%}%>
+                    </ul>
+                </div>
+                <% if(user){%>
+                    <a class="nav-link nav-logout nav-logout1">Log out</a>
+                    <%}%>
+        </nav>
+    </header>
+
+    <!-------------------------------------------->
+    <!--                Content                 -->
+    <!-------------------------------------------->
+    <div class="container">
+        <h3>New Post</h3>
+        <form method="post" action='/marketplace/post' enctype="multipart/form-data">
+                <div>
+                    <p><b>Fruits:</b></p>
+                    <div id="fruitOptions">
+                        <section>
+                            <label for="mango"> <img class="fruitImage" src="/images/fruits/mango.jpeg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="mango"
+                                name="mango" value="Mango">
+                        </section>
+
+                        <section>
+                            <label for="pomelo"> <img class="fruitImage" src="/images/fruits/pomelo.jpg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="pomelo"
+                                name="pomelo" value="Pomelo">
+                        </section>
+
+                        <section>
+                            <label for="coconut"> <img class="fruitImage" src="/images/fruits/coconut.jpg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="coconut"
+                                name="coconut" value="Coconut">
+                        </section>
+
+                        <section>
+                            <label for="papaya"> <img class="fruitImage" src="/images/fruits/papaya.jpeg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="papaya"
+                                name="papaya" value="Papaya">
+                        </section>
+
+                        <section>
+                            <label for="longan"> <img class="fruitImage" src="/images/fruits/longan.jpg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="longan"
+                                name="longan" value="Longan">
+                        </section>
+
+                        <section>
+                            <label for="durian"> <img class="fruitImage" src="/images/fruits/durian.jpg"></label>
+                            <input type="checkbox" class="square" style="text-align-last: center;" id="durian"
+                                name="durian" value="Durian">
+                        </section>
+                    </div>
+                </div>
+
+                <div>
+                    <p><b>Estimated Quantity(kg):</b></p>
+                    <input type="number" id="estQuantity" placeholder="ex. 1000" name="estQuantity">
+                </div>
+
+                <div>
+                    <label for="validationTextarea"><b>Description:</b></label>
+                    <textarea class="form-control" id="validationTextarea"
+                        placeholder="Please write descriptions about your agriculture and harvesting" name="description"
+                        required></textarea>
+                </div>
+
+                <div>
+                    <p>
+                        <b>Image of Agriculture</b>
+                    </p>
+                    <p id="caption">Capture a photo that reflects the your agriculture quality</p>
+                    <div>
+                        <input type="file" value="upload" id='photo' name='photo' accept="image/*">
+                    </div>
+                </div>
+                <%= typeof msg != 'undefined' ? msg : '' %>
+                    <div id="divPost">
+                        <input type="submit" value="Submit" id="postSelling" class="btn btn-primary">
+                    </div>
+                    </form>
+            </div>
+
+            <!----------------------------------->
+            <!-- Icon navbar for small devices -->
+            <!----------------------------------->
+            <footer>
+                <nav class="nav navBottom">
+                    <a href="/home" class="nav_link">
+                        <i class="fas fa-home nav__icon"></i>
+                        <span class="nav__text">Home</span>
+                    </a>
+
+                    <a href="/marketplace" class="nav_link nav_link_active">
+                        <i class="fas fa-store nav__icon"></i>
+                        <span class="nav__text">Marketplace</span>
+                    </a>
+
+                    <a href="/message" class="nav_link">
+                        <i class="fas fa-comment-dots nav__icon"></i>
+                        <span class="nav__text">Message</span>
+                    </a>
+
+                    <a href="/mypage" class="nav_link">
+                        <i class="fas fa-user nav__icon"></i>
+                        <span class="nav__text">Profile</span>
+                    </a>
+                </nav>
+            </footer>
+
+            <!----------------------------------------------->
+            <!--    JS: Boostrap, Firebase, API related    -->
+            <!----------------------------------------------->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+                integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+                crossorigin="anonymous">
+            </script>
+
+            <!--------------------------------------------------------------------->
+            <!--       JS files: my own JavaScript functions included here       -->
+            <!--------------------------------------------------------------------->
+            <script src="/js/logout.js"></script>
+</body>
+
+</html>

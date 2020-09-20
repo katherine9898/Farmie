@@ -1,0 +1,41 @@
+h3 {
+    border-bottom: 1px solid rgb(133, 190, 133);
+    color: rgb(163, 201, 108);
+}
+
+/* Set color for the table of market price */
+#tableHeader {
+    background-color: rgb(163, 201, 108);
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(133, 190, 133);
+}
+
+.priceRow {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.details {
+    margin-top: 20px;
+    background-color: rgb(163, 201, 108);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {}
+
+/* Big screen and tablet */
+@media (min-width: 400px) and (max-width: 1023px) {}
+
+/* Small devices */
+@media (max-width: 400px) {}

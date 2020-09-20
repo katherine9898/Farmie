@@ -1,0 +1,140 @@
+#mapIcon1 {
+    color: white;
+}
+
+.userImages {
+    width: 50px;
+}
+
+/* Post card */
+.fruitImage {
+    text-align: center;
+}
+
+.titleFruit {
+    color: rgb(137, 167, 93);
+}
+
+/* Small card */
+.smallCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#mapIcon {
+    color: rgb(163, 201, 108);
+}
+
+#backButton {
+    text-align: center;
+}
+
+/* For collapse content
+The code was found at https://www.w3schools.com/howto/howto_js_collapsible.asp
+*/
+.collapsible {
+    background-color: rgb(163, 201, 108);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+button.collapsible.active,
+.collapsible:hover {
+    background-color: rgb(145, 168, 113);
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {
+    #userPhoto {
+        height: 150px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 30% auto;
+    }
+
+    .userCard {
+        text-align: center;
+        background-color: rgb(180, 214, 112);
+        border-radius: 15px 15px 30px 30px;
+        width: 250px;
+        height: 250px;
+        margin-right: 110px;
+    }
+
+    .userPosts {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        column-gap: 10px;
+    }
+
+    .photoUploaded {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Big screen and tablet */
+@media (min-width: 400px) and (max-width: 1023px) {
+    .userCard {
+        text-align: center;
+        background-color: rgb(180, 214, 112);
+        border-radius: 15px 15px 30px 30px;
+    }
+
+    .userInfo {
+        display: flex;
+        justify-content: center;
+    }
+
+    #userPhoto {
+        height: 200px;
+    }
+
+    .photoUploaded {
+        width: 300px;
+        height: 280px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 400px) {
+    .userCard {
+        text-align: center;
+        background-color: rgb(180, 214, 112);
+        border-radius: 15px 15px 30px 30px;
+    }
+
+    .userInfo {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* .userPosts {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+    } */
+
+    #userPhoto {
+        height: 200px;
+    }
+
+    .photoUploaded {
+        width: 300px;
+        height: 200px;
+    }
+}

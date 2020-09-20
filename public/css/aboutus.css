@@ -1,0 +1,244 @@
+/* Content */
+#options {
+    text-align: center;
+    color: rgb(88, 121, 45);
+
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* For social media sharing buttons */
+.share-btn-container {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+}
+
+.share-btn-container a i {
+    font-size: 30px;
+}
+
+.share-btn-container a {
+    margin: 12px 0;
+    transition: 500ms;
+}
+
+.share-btn-container a:hover {
+    transform: scale(1.2);
+}
+
+.share-btn-container .fa-facebook {
+    color: #3b5998;
+}
+
+.share-btn-container .fa-twitter {
+    color: #1da1f2;
+}
+
+.share-btn-container .fa-google-plus {
+    color: #dd4b39;
+}
+
+.share-btn-container .fa-whatsapp {
+    color: #25d366;
+}
+
+/* For the photo */
+#founderPhoto {
+    width: 140px;
+}
+
+/* For the bottom of the page */
+#bottomPage {
+    text-align: center;
+}
+
+#farmie {
+    color: rgb(144, 179, 97);
+}
+
+/* Top navbar */
+#logo {
+    width: 50px;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(88, 121, 45);
+}
+
+.whiteContent {
+    color: white;
+}
+
+
+/* Desktops and tablet */
+@media (min-width: 1024px) {
+    .nav-active {
+        background-color: rgb(163, 201, 108);
+        border-radius: 20px;
+    }
+
+    #appFunction {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .card i {
+        font-size: 38px;
+
+    }
+
+    .card {
+        width: 200px;
+        height: 250px;
+        padding-top: 40px;
+        padding-right: 5px;
+        padding-left: 5px;
+        background-color: rgb(163, 201, 108);
+        color: white;
+        box-shadow: 4px 4px 5px rgba(163, 201, 108, 0.5);
+
+    }
+
+    #team {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    #bigLogo {
+        width: 140px;
+    }
+
+    .authButton {
+        background-color: rgb(163, 201, 108);
+        width: 90px;
+        border-radius: 15px;
+        box-shadow: 4px 4px 5px rgba(163, 201, 108, 0.5);
+        color: white;
+    }
+
+    .titleBox {
+        margin-bottom: 50px;
+    }
+
+    .content2,
+    .content3,
+    .content4 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 100px;
+    }
+}
+
+/* Big screen, tablet, and small devices */
+@media (max-width: 1023px) {
+    #appFunction {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card {
+        margin-top: 10px;
+        padding-top: 10px;
+        background-color: rgb(163, 201, 108);
+        color: white;
+        box-shadow: 4px 4px 5px rgba(163, 201, 108, 0.5);
+    }
+
+    .card i {
+        font-size: 35px;
+    }
+
+    #team {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+
+    #bigLogo {
+        width: 90px;
+    }
+
+    .authButton {
+        background-color: rgb(163, 201, 108);
+        width: 90px;
+        border-radius: 15px;
+        box-shadow: 4px 4px 5px rgba(163, 201, 108, 0.5);
+        color: white;
+    }
+
+    .titleBox {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .content2,
+    .content3,
+    .content4 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0 30px;
+    }
+
+}
+
+/* Parallax effects*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.box1 {
+    height: 100vh;
+    width: 100%;
+    background-image: url('./../images/fruitScreen.png');
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+.box2 {
+    height: 40vh;
+    width: 100%;
+    background-color: rgb(163, 201, 108);
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+.box3 {
+    height: 60vh;
+    width: 100%;
+    background-image: url('./../images/fruitScreen.png');
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+.box4 {
+    height: 40vh;
+    width: 100%;
+    background-color: rgb(163, 201, 108);
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+
+
+
+.content4 {
+    box-shadow: 0 5px 5px rgba(163, 201, 108, 0.5);
+}

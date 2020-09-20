@@ -1,0 +1,53 @@
+#logo {
+    width: 70px;
+}
+
+#topLogo {
+    text-align: center;
+    color: rgb(163, 201, 108);
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+
+#userEmail,
+#userPassword {
+    width: 250px;
+}
+
+
+#lbEmail,
+#lbPassword {
+    text-align: left;
+    /* color: rgb(108, 141, 61); */
+}
+
+form {
+    background-color: rgb(164, 201, 113);
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 300px;
+    margin: auto;
+}
+
+.theForm {
+    text-align: center;
+}
+
+.fillBox {
+    text-align: center;
+}
+
+#fruitPicture {
+    width: 220px;
+}
+
+#botPicture {
+    margin-top: 35px;
+    text-align: center;
+}
+
+#login {
+    border-radius: 20px;
+}
